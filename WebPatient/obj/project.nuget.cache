@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fVvwRj18I0PERZV3H/lEMBjZSlMoOrAi2Vk6FjcyHZeW9Va+I3ee6TfDg8lzYYIOSWy48o27nTIXxe1AzyAasw==",
+  "dgSpecHash": "nmUTxyx2gk8gOg4xlSd2Uq7HZNrsk1X8RV4a3XIEtYqcxPRgTsG5Jm7jW8kP5gr2lmdeAAajsm68FTxTg3+SPQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\frede\\Documents\\pipeline-csharp\\pipeline-csharp\\WebPatient\\WebPatient.csproj",
   "expectedPackageFiles": [
@@ -117,6 +117,7 @@
     "C:\\Users\\frede\\.nuget\\packages\\microsoft.visualstudio.web.codegenerators.mvc\\8.0.2\\microsoft.visualstudio.web.codegenerators.mvc.8.0.2.nupkg.sha512",
     "C:\\Users\\frede\\.nuget\\packages\\microsoft.win32.systemevents\\7.0.0\\microsoft.win32.systemevents.7.0.0.nupkg.sha512",
     "C:\\Users\\frede\\.nuget\\packages\\mono.texttemplating\\2.3.1\\mono.texttemplating.2.3.1.nupkg.sha512",
+    "C:\\Users\\frede\\.nuget\\packages\\mstest.testframework\\3.4.3\\mstest.testframework.3.4.3.nupkg.sha512",
     "C:\\Users\\frede\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\frede\\.nuget\\packages\\nswag.annotations\\14.0.7\\nswag.annotations.14.0.7.nupkg.sha512",
     "C:\\Users\\frede\\.nuget\\packages\\nuget.common\\6.9.1\\nuget.common.6.9.1.nupkg.sha512",

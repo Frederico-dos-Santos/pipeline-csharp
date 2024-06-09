@@ -1,19 +1,37 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebPatient
 {
+    [Table("Patient")]
     public class Patient
     {
         [Key]
-        public Guid Id { get; }
-        public required string Nome { get; set; }
-        public required string Sobrenome { get; set; }
-        public char Sexo { get; set; }
+        public Guid Id { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string Nome { get; set; }
+
+        [Required]
+        [MaxLength(50)]
+        public string Sobrenome { get; set; }
+
+        [Required]
+        public string Sexo { get; set; }
+
+        [Required]
         public DateTime Nascimento { get; set; }
-        public byte Idade { get; }
-        public short Altura { get; set; }
+
+        [Required]
+        public double Altura { get; set; }
+
+        [Required]
         public double Peso { get; set; }
-        public required string Cpf { get; set; }
+
+        [Required]
+        [MaxLength(11)]
+        public string Cpf { get; set; }
 
         private double imc;
 
@@ -24,7 +42,7 @@ namespace WebPatient
 
         public double ObterPesoIdeal()
         {
-            if (Sexo == 'M')
+            if (Sexo.ToLower() == "m")
                 return (72.7 * Altura) - 58;
 
             return (62.1 * Altura) - 44.7;
@@ -60,7 +78,7 @@ namespace WebPatient
 
         private double CalcularIMC()
         {
-            return Peso / (Altura * Altura);
+            return imc = Peso / (Altura * Altura);
         }
 
         private byte CalcularIdade()
