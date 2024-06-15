@@ -37,7 +37,7 @@ namespace WebPatient
 
         public float GetIMC()
         {
-            return (float)imc;
+            return imc > 0 ? (float)imc : (float)CalcularIMC();
         }
 
         public double ObterPesoIdeal()
