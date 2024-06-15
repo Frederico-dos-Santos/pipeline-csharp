@@ -22,10 +22,6 @@ jobs:
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.5
 
-    - name: Restore NuGet packages
-      run: nuget restore WebPatient.sln
-      working-directory: pipeline-csharp  
-
     - name: Run Tests
       run: dotnet test WebPatient.Test/WebPatient.Test.csproj --no-build --verbosity normal
       working-directory: pipeline-csharp  
