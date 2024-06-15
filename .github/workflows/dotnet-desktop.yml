@@ -14,10 +14,16 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Print working directory
+      run: pwd
+
+    - name: List directory contents
+      run: dir
+
     - name: Setup MSBuild
       uses: microsoft/setup-msbuild@v1
       with:
-        msbuild-version: '17.9.x' 
+        msbuild-version: '17.9.x'
 
     - name: Setup NuGet
       uses: NuGet/setup-nuget@v1.0.5
@@ -32,4 +38,4 @@ jobs:
 
     - name: Run Tests
       run: dotnet test WebPatient.Test/WebPatient.Test.csproj --no-build --verbosity normal
-      working-directory: pipeline-csharp  
+      working-directory: pipeline-csharp
