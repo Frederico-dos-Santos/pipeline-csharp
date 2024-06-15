@@ -7,6 +7,7 @@ namespace WebPatient
     public class Patient
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
         [Required]
@@ -34,6 +35,11 @@ namespace WebPatient
         public string Cpf { get; set; }
 
         private double imc;
+
+        public Patient()
+        {
+            Id = Guid.NewGuid(); 
+        }
 
         public float GetIMC()
         {

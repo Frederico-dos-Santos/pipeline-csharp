@@ -28,5 +28,8 @@ jobs:
     - name: Build the Solution
       run: msbuild WebPatient/WebPatient.sln /p:Configuration=Release
 
-    - name: Run Tests
+    - name: Run Unit Tests
       run: dotnet test WebPatient.Test/WebPatient.Test.csproj --no-build --verbosity normal
+
+    - name: Run Integration Tests
+      run: dotnet test WebPatient.IntegrationTests/WebPatient.IntegrationTests.csproj --no-build --verbosity normal
