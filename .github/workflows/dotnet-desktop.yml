@@ -36,15 +36,21 @@ jobs:
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v2
 
+    # Clean the solution
+    - name: Clean the solution
+      run: dotnet clean ${{ env.Solution_Name }} --configuration ${{ matrix.configuration }}
+
+    # Restore dependencies
+    - name: Restore dependencies
+      run: dotnet restore ${{ env.Solution_Name }}
+
+    # Build the solution
+    - name: Build the solution
+      run: dotnet build ${{ env.Solution_Name }} --configuration ${{ matrix.configuration }} --no-restore
+
     # Execute all unit tests in the solution
     - name: Execute unit tests
-      run: dotnet test ${{ env.Test_Project_Path }}
-
-    # Restore the application to populate the obj folder with RuntimeIdentifiers
-    - name: Restore the application
-      run: msbuild ${{ env.Solution_Name }} /t:Restore /p:Configuration=${{ matrix.configuration }}
-      env:
-        Configuration: ${{ matrix.configuration }}
+      run: dotnet test ${{ env.Test_Project_Path }} --configuration ${{ matrix.configuration }} --no-build --verbosity normal
 
     # Decode the base 64 encoded pfx and save the Signing_Certificate
     - name: Decode the pfx
