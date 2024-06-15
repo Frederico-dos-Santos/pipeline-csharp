@@ -16,7 +16,7 @@ jobs:
 
     env:
       Solution_Name: WebPatient.sln                        
-      Test_Project_Path: WebPatient.Tests/WebPatient.Tests.csproj                 
+      Test_Project_Path: WebPatient.Test/WebPatient.Test.csproj                 
       Wap_Project_Directory: WebPatient.Package
       Wap_Project_Path: WebPatient.Package/WebPatient.Package.wapproj 
 
