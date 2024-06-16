@@ -11,12 +11,13 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("WebPatient.Test")]
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("4b8eb790-0aa9-40c7-a91f-242768b845e7")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("WebPatient")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+68723e0c24588a59e4b2d9a52a754bb0703e4463")]
-[assembly: System.Reflection.AssemblyProductAttribute("WebPatient.Test")]
-[assembly: System.Reflection.AssemblyTitleAttribute("WebPatient.Test")]
+[assembly: System.Reflection.AssemblyProductAttribute("WebPatient")]
+[assembly: System.Reflection.AssemblyTitleAttribute("WebPatient")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.

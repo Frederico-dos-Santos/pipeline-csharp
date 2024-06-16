@@ -1,32 +1,64 @@
-name: CI
+name: SonarCloud
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    types: [opened, synchronize, reopened]
 
 jobs:
-  Build:
+  build:
+    name: Build and analyze
     runs-on: windows-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: 'zulu'
+          
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1
+        with:
+          msbuild-version: '17.9.x'
 
-    - name: Setup MSBuild
-      uses: microsoft/setup-msbuild@v1
-      with:
-        msbuild-version: '17.9.x'
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1.0.5
 
-    - name: Setup NuGet
-      uses: NuGet/setup-nuget@v1.0.5
+      - name: Restore NuGet packages
+        run: nuget restore WebPatient/WebPatient.sln
 
-    - name: Restore NuGet packages
-      run: nuget restore WebPatient/WebPatient.sln
+      - name: Build the Solution
+        run: msbuild WebPatient/WebPatient.sln /p:Configuration=Release
 
-    - name: Build the Solution
-      run: msbuild WebPatient/WebPatient.sln /p:Configuration=Release
+      - name: Run Unit Tests
+        run: dotnet test WebPatient.Test/WebPatient.Test.csproj --no-build --verbosity normal
 
-    - name: Run Tests
-      run: dotnet test WebPatient.Test/WebPatient.Test.csproj --no-build --verbosity normal
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+
+      - name: Cache SonarCloud scanner
+        id: cache-sonar-scanner
+        uses: actions/cache@v3
+        with:
+          path: ./.sonar/scanner
+          key: ${{ runner.os }}-sonar-scanner
+          restore-keys: ${{ runner.os }}-sonar-scanner
+
+      - name: Install SonarCloud scanner
+        if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+        run: dotnet tool install --global dotnet-sonarscanner
+
+      - name: SonarCloud Scan
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: dotnet sonarscanner begin /k:"Frederico-dos-Santos_pipeline-csharp" /o:"frederico-sonar" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" && dotnet build /d:sonar.login="${{ secrets.SONAR_TOKEN }}" && dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+
