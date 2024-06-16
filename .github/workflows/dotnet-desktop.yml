@@ -96,5 +96,8 @@ jobs:
         with:
           msbuild-version: '17.9.x'
 
+      - name: Set Working Directory
+        run: cd WebPatient
+
       - name: Run Acceptance Tests
         run: dotnet test WebPatient.AcceptanceTest/WebPatient.AcceptanceTest.csproj --no-build --verbosity normal

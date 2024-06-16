@@ -648,3 +648,14 @@ C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.AcceptanceTe
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.AcceptanceTest\obj\Debug\net8.0\WebPatient.AcceptanceTest.pdb
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.AcceptanceTest\obj\Debug\net8.0\WebPatient.AcceptanceTest.genruntimeconfig.cache
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.AcceptanceTest\obj\Debug\net8.0\ref\WebPatient.AcceptanceTest.dll
+C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.AcceptanceTest\bin\Debug\net8.0\WebPatient.IntegrationTest.deps.json
+C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.AcceptanceTest\bin\Debug\net8.0\WebPatient.IntegrationTest.runtimeconfig.json
+C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.AcceptanceTest\bin\Debug\net8.0\NUnit3.TestAdapter.dll
+C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.AcceptanceTest\bin\Debug\net8.0\NUnit3.TestAdapter.pdb
+C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.AcceptanceTest\bin\Debug\net8.0\nunit.engine.dll
+C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.AcceptanceTest\bin\Debug\net8.0\nunit.engine.api.dll
+C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.AcceptanceTest\bin\Debug\net8.0\nunit.engine.core.dll
+C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.AcceptanceTest\bin\Debug\net8.0\testcentric.engine.metadata.dll
+C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.AcceptanceTest\bin\Debug\net8.0\nunit.framework.dll
+C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.AcceptanceTest\bin\Debug\net8.0\WebPatient.IntegrationTest.dll
+C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.AcceptanceTest\bin\Debug\net8.0\WebPatient.IntegrationTest.pdb

@@ -2,12 +2,13 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json;
 using System.Text;
 using WebPatient;
+using WebPatient.IntegrationTest;
 
-public class WebApiAcceptanceTests : IClassFixture<WebApplicationFactory<Startup>>
+public class WebApiAcceptanceTests : IClassFixture<CustomWebApplicationFactory<Startup>>
 {
     private readonly HttpClient _client;
 
-    public WebApiAcceptanceTests(WebApplicationFactory<Startup> factory)
+    public WebApiAcceptanceTests(CustomWebApplicationFactory<Startup> factory)
     {
         _client = factory.CreateClient();
     }

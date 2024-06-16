@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebPatient.AcceptanceTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9672e908814d0fa82ac71011eb1d8b38c52710f7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c6d6b2e0c718d5a78ad7ae41444d14c021e6326a")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebPatient.AcceptanceTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebPatient.AcceptanceTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

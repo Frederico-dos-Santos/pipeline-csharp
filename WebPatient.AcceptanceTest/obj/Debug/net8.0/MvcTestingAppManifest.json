@@ -1,3 +1,4 @@
 {
-  "WebPatient, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\frede\\Documents\\pipeline-csharp\\pipeline-csharp\\WebPatient"
+  "WebPatient, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\frede\\Documents\\pipeline-csharp\\pipeline-csharp\\WebPatient",
+  "WebPatient.IntegrationTest, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "C:\\Users\\frede\\Documents\\pipeline-csharp\\pipeline-csharp\\WebPatient.IntegrationTest"
 }

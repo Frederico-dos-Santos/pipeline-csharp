@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\WebPatient.IntegrationTest\WebPatient.IntegrationTest.csproj" />
     <ProjectReference Include="..\WebPatient\WebPatient.csproj" />
   </ItemGroup>
 
