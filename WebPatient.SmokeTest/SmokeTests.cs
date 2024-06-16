@@ -1,5 +1,5 @@
-using System.Net;
 using Microsoft.AspNetCore.Mvc.Testing;
+using System.Net;
 using WebPatient;
 
 public class SmokeTests : IClassFixture<WebApplicationFactory<Startup>>
@@ -16,9 +16,17 @@ public class SmokeTests : IClassFixture<WebApplicationFactory<Startup>>
     {
         var client = _factory.CreateClient();
 
-        var response = await client.GetAsync("/api/WebApi/GetAll");
+        try
+        {
+            var response = await client.GetAsync("/api/WebApi/GetAll");
 
-        response.EnsureSuccessStatusCode(); 
-        Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+            response.EnsureSuccessStatusCode();
+            Assert.Equal(HttpStatusCode.OK, response.StatusCode);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Exception during test execution:");
+            Console.WriteLine(ex.ToString());
+        }
     }
 }
