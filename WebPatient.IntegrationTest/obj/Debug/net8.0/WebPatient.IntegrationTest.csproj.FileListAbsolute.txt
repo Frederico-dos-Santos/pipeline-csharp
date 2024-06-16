@@ -343,6 +343,7 @@ C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.IntegrationT
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.IntegrationTest\bin\Debug\net8.0\Microsoft.DotNet.Scaffolding.Shared.dll
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.IntegrationTest\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.IntegrationTest\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.IntegrationTest\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.IntegrationTest\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.IntegrationTest\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.IntegrationTest\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
@@ -647,4 +648,3 @@ C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.IntegrationT
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.IntegrationTest\obj\Debug\net8.0\WebPatient.IntegrationTest.pdb
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.IntegrationTest\obj\Debug\net8.0\WebPatient.IntegrationTest.genruntimeconfig.cache
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.IntegrationTest\obj\Debug\net8.0\ref\WebPatient.IntegrationTest.dll
-C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.IntegrationTest\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll

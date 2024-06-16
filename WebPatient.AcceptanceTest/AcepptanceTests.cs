@@ -1,21 +1,26 @@
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json;
 using System.Text;
 using WebPatient;
-using WebPatient.IntegrationTest;
 
-public class WebApiAcceptanceTests : IClassFixture<CustomWebApplicationFactory<Startup>>
+public class WebApiAcceptanceTests : IClassFixture<WebApplicationFactory<Startup>>
 {
-    private readonly HttpClient _client;
+    private readonly WebApplicationFactory<Startup> _factory;
 
-    public WebApiAcceptanceTests(CustomWebApplicationFactory<Startup> factory)
+    public WebApiAcceptanceTests(WebApplicationFactory<Startup> factory)
     {
-        _client = factory.CreateClient();
+        _factory = factory.WithWebHostBuilder(builder =>
+        {
+            var contentRoot = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "WebPatient");
+            builder.UseContentRoot(contentRoot);
+        });
     }
 
     [Fact]
     public async Task CreatePatient_ReturnsCreated()
     {
+        var client = _factory.CreateClient();
         var patient = new Patient
         {
             Id = Guid.NewGuid(),
@@ -29,7 +34,7 @@ public class WebApiAcceptanceTests : IClassFixture<CustomWebApplicationFactory<S
         };
 
         var content = new StringContent(JsonConvert.SerializeObject(patient), Encoding.UTF8, "application/json");
-        var response = await _client.PostAsync("/api/WebApi/Create", content);
+        var response = await client.PostAsync("/api/WebApi/Create", content);
 
         response.EnsureSuccessStatusCode();
         Assert.Equal(System.Net.HttpStatusCode.Created, response.StatusCode);
@@ -38,7 +43,8 @@ public class WebApiAcceptanceTests : IClassFixture<CustomWebApplicationFactory<S
     [Fact]
     public async Task GetAllPatients_ReturnsPatients()
     {
-        var response = await _client.GetAsync("/api/WebApi/GetAll");
+        var client = _factory.CreateClient();
+        var response = await client.GetAsync("/api/WebApi/GetAll");
 
         response.EnsureSuccessStatusCode();
         var responseString = await response.Content.ReadAsStringAsync();
@@ -50,6 +56,7 @@ public class WebApiAcceptanceTests : IClassFixture<CustomWebApplicationFactory<S
     [Fact]
     public async Task GetPatientById_ReturnsPatient()
     {
+        var client = _factory.CreateClient();
         var patient = new Patient
         {
             Id = Guid.NewGuid(),
@@ -63,9 +70,9 @@ public class WebApiAcceptanceTests : IClassFixture<CustomWebApplicationFactory<S
         };
 
         var createContent = new StringContent(JsonConvert.SerializeObject(patient), Encoding.UTF8, "application/json");
-        await _client.PostAsync("/api/WebApi/Create", createContent);
+        await client.PostAsync("/api/WebApi/Create", createContent);
 
-        var response = await _client.GetAsync($"/api/WebApi/GetById/{patient.Id}");
+        var response = await client.GetAsync($"/api/WebApi/GetById/{patient.Id}");
 
         response.EnsureSuccessStatusCode();
         var responseString = await response.Content.ReadAsStringAsync();
@@ -78,6 +85,7 @@ public class WebApiAcceptanceTests : IClassFixture<CustomWebApplicationFactory<S
     [Fact]
     public async Task UpdatePatient_ReturnsNoContent()
     {
+        var client = _factory.CreateClient();
         var patient = new Patient
         {
             Id = Guid.NewGuid(),
@@ -91,11 +99,11 @@ public class WebApiAcceptanceTests : IClassFixture<CustomWebApplicationFactory<S
         };
 
         var createContent = new StringContent(JsonConvert.SerializeObject(patient), Encoding.UTF8, "application/json");
-        await _client.PostAsync("/api/WebApi/Create", createContent);
+        await client.PostAsync("/api/WebApi/Create", createContent);
 
         patient.Nome = "Updated";
         var updateContent = new StringContent(JsonConvert.SerializeObject(patient), Encoding.UTF8, "application/json");
-        var response = await _client.PutAsync($"/api/WebApi/Update/{patient.Id}", updateContent);
+        var response = await client.PutAsync($"/api/WebApi/Update/{patient.Id}", updateContent);
 
         response.EnsureSuccessStatusCode();
         Assert.Equal(System.Net.HttpStatusCode.NoContent, response.StatusCode);
@@ -104,6 +112,7 @@ public class WebApiAcceptanceTests : IClassFixture<CustomWebApplicationFactory<S
     [Fact]
     public async Task DeletePatient_ReturnsNoContent()
     {
+        var client = _factory.CreateClient();
         var patient = new Patient
         {
             Id = Guid.NewGuid(),
@@ -117,9 +126,9 @@ public class WebApiAcceptanceTests : IClassFixture<CustomWebApplicationFactory<S
         };
 
         var createContent = new StringContent(JsonConvert.SerializeObject(patient), Encoding.UTF8, "application/json");
-        await _client.PostAsync("/api/WebApi/Create", createContent);
+        await client.PostAsync("/api/WebApi/Create", createContent);
 
-        var response = await _client.DeleteAsync($"/api/WebApi/Delete/{patient.Id}");
+        var response = await client.DeleteAsync($"/api/WebApi/Delete/{patient.Id}");
 
         response.EnsureSuccessStatusCode();
         Assert.Equal(System.Net.HttpStatusCode.NoContent, response.StatusCode);

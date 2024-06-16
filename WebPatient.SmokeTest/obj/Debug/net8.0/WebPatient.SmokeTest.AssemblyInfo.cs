@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebPatient.SmokeTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9672e908814d0fa82ac71011eb1d8b38c52710f7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5049675058e09708b07f3e891b7b282d43f5a50")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebPatient.SmokeTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebPatient.SmokeTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
