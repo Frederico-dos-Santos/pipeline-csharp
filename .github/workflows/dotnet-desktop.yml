@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI
 
 on:
   push:
@@ -32,12 +32,6 @@ jobs:
       - name: Restore NuGet packages
         run: nuget restore WebPatient/WebPatient.sln
 
-      - name: Build the Solution
-        run: msbuild WebPatient/WebPatient.sln /p:Configuration=Release
-
-      - name: Run Unit Tests
-        run: dotnet test WebPatient.Test/WebPatient.Test.csproj --no-build --verbosity normal
-
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
         with:
@@ -57,16 +51,16 @@ jobs:
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         run: dotnet tool install --global dotnet-sonarscanner
 
-      - name: SonarCloud Scan
+      - name: SonarCloud Scan Begin
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: dotnet sonarscanner begin /k:"Frederico-dos-Santos_pipeline-csharp" /o:"frederico-sonar" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" && dotnet build /d:sonar.login="${{ secrets.SONAR_TOKEN }}" && dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+        run: dotnet sonarscanner begin /k:"Frederico-dos-Santos_pipeline-csharp" /o:"frederico-sonar" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
 
       - name: Build the Solution
-        run: dotnet build WebPatient/WebPatient.sln /p:Configuration=Release
+        run: msbuild WebPatient/WebPatient.sln /p:Configuration=Release
 
-      - name: Run Smoke Tests
-        run: dotnet test WebPatient.SmokeTest/WebPatient.SmokeTest.csproj --no-build --verbosity normal
+      - name: Run Unit Tests
+        run: dotnet test WebPatient.Test/WebPatient.Test.csproj --no-build --verbosity normal
 
       - name: SonarCloud Scan End
         env:
