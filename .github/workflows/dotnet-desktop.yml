@@ -82,3 +82,22 @@ jobs:
 
       - name: Run Smoke Tests
         run: dotnet test WebPatient.SmokeTest/WebPatient.SmokeTest.csproj --no-build --verbosity normal
+
+  acceptance-tests:
+    name: Run Acceptance Tests
+    runs-on: windows-latest
+    needs: build
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1
+        with:
+          msbuild-version: '17.9.x'
+
+      - name: Set Working Directory
+        run: cd WebPatient
+
+      - name: Run Acceptance Tests
+        run: dotnet test WebPatient.AcceptanceTest/WebPatient.AcceptanceTest.csproj --no-build --verbosity normal
