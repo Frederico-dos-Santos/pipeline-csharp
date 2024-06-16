@@ -97,4 +97,4 @@ jobs:
           msbuild-version: '17.9.x'
 
       - name: Run Acceptance Tests
-        run: dotnet test WebPatient.AcceptanceTests/WebPatient.AcceptanceTests.csproj --no-build --verbosity normal
+        run: dotnet test WebPatient.AcceptanceTest/WebPatient.AcceptanceTest.csproj --no-build --verbosity normal
