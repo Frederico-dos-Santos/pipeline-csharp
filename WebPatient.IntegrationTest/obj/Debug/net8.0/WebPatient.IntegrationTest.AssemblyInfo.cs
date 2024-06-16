@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebPatient.IntegrationTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28c2db02a8fa5695620e72b2c9bc2202f0fd46d3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5870b1359ce24ce4d43e8d7b18860f5a478d0c16")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebPatient.IntegrationTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebPatient.IntegrationTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
