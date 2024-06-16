@@ -1,4 +1,4 @@
-name: SonarCloud
+name: CI Pipeline
 
 on:
   push:
@@ -57,7 +57,7 @@ jobs:
         run: dotnet sonarscanner begin /k:"Frederico-dos-Santos_pipeline-csharp" /o:"frederico-sonar" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
 
       - name: Build the Solution
-        run: msbuild WebPatient/WebPatient.sln /p:Configuration=Release
+        run: dotnet build WebPatient/WebPatient.sln /p:Configuration=Release
 
       - name: Run Unit Tests
         run: dotnet test WebPatient.Test/WebPatient.Test.csproj --no-build --verbosity normal
@@ -66,3 +66,28 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: dotnet sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+
+  smoke-tests:
+    name: Run Smoke Tests
+    runs-on: windows-latest
+    needs: build
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1
+        with:
+          msbuild-version: '17.9.x'
+
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1.0.5
+
+      - name: Restore NuGet packages
+        run: nuget restore WebPatient/WebPatient.sln
+
+      - name: Build the Solution
+        run: dotnet build WebPatient/WebPatient.sln /p:Configuration=Release
+
+      - name: Run Smoke Tests
+        run: dotnet test WebPatient.SmokeTest/WebPatient.SmokeTest.csproj --no-build --verbosity normal
