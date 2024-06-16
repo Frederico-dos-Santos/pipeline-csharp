@@ -1,6 +1,10 @@
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.AspNetCore.TestHost;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using System.Net;
 using WebPatient;
+using Xunit;
 
 public class SmokeTests : IClassFixture<WebApplicationFactory<Startup>>
 {
@@ -8,7 +12,10 @@ public class SmokeTests : IClassFixture<WebApplicationFactory<Startup>>
 
     public SmokeTests(WebApplicationFactory<Startup> factory)
     {
-        _factory = factory;
+        _factory = factory.WithWebHostBuilder(builder =>
+        {
+            builder.UseSolutionRelativeContentRoot("WebPatient"); 
+        });
     }
 
     [Fact]
