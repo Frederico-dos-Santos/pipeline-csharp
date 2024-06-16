@@ -1,10 +1,4 @@
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\bin\Debug\net8.0\CoverletSourceRootsMapping_WebPatient.Test
-C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\obj\Debug\net8.0\WebPatient.Test.csproj.AssemblyReference.cache
-C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\obj\Debug\net8.0\WebPatient.Test.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\obj\Debug\net8.0\WebPatient.Test.AssemblyInfoInputs.cache
-C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\obj\Debug\net8.0\WebPatient.Test.AssemblyInfo.cs
-C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\obj\Debug\net8.0\WebPatient.Test.csproj.CoreCompileInputs.cache
-C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\obj\Debug\net8.0\WebPatient.Test.sourcelink.json
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\bin\Debug\net8.0\testhost.dll
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\bin\Debug\net8.0\WebPatient.deps.json
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\bin\Debug\net8.0\WebPatient.runtimeconfig.json
@@ -334,6 +328,12 @@ C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\bin\Deb
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\bin\Debug\net8.0\WebPatient.dll
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\bin\Debug\net8.0\WebPatient.pdb
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\bin\Debug\net8.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\obj\Debug\net8.0\WebPatient.Test.csproj.AssemblyReference.cache
+C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\obj\Debug\net8.0\WebPatient.Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\obj\Debug\net8.0\WebPatient.Test.AssemblyInfoInputs.cache
+C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\obj\Debug\net8.0\WebPatient.Test.AssemblyInfo.cs
+C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\obj\Debug\net8.0\WebPatient.Test.csproj.CoreCompileInputs.cache
+C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\obj\Debug\net8.0\WebPatient.Test.sourcelink.json
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\obj\Debug\net8.0\WebPatie.EEB943B5.Up2Date
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\obj\Debug\net8.0\WebPatient.Test.dll
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\obj\Debug\net8.0\refint\WebPatient.Test.dll

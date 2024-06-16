@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebPatient", "WebPatient.csproj", "{FC8E457D-EE72-44A7-9F03-F70F4C1D5A1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPatient.Test", "..\WebPatient.Test\WebPatient.Test.csproj", "{D69B1E73-E490-45DF-AB4A-3E8AD8B3FD17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebPatient.Test", "..\WebPatient.Test\WebPatient.Test.csproj", "{D69B1E73-E490-45DF-AB4A-3E8AD8B3FD17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPatient.IntegrationTest", "..\WebPatient.IntegrationTest\WebPatient.IntegrationTest.csproj", "{F20EB722-757B-447E-B3C6-490E0AD054D7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{D69B1E73-E490-45DF-AB4A-3E8AD8B3FD17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D69B1E73-E490-45DF-AB4A-3E8AD8B3FD17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D69B1E73-E490-45DF-AB4A-3E8AD8B3FD17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F20EB722-757B-447E-B3C6-490E0AD054D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F20EB722-757B-447E-B3C6-490E0AD054D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F20EB722-757B-447E-B3C6-490E0AD054D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F20EB722-757B-447E-B3C6-490E0AD054D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
