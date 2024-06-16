@@ -28,6 +28,7 @@ C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient\bin\Debug\ne
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll

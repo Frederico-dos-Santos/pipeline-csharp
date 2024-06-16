@@ -1,18 +1,22 @@
 using System.Net;
 using System.Text;
+using Microsoft.AspNetCore.Mvc.Testing;
 using Newtonsoft.Json;
 namespace WebPatient.IntegrationTest
 {
     public class IntegrationTests
     {
         private HttpClient _client;
-        private const string BaseUrl = "https://localhost:5255/api/WebApi";
+        private const string BaseUrl = "/api/WebApi";
 
         [SetUp]
         public void Setup()
         {
-            var factory = new CustomWebApplicationFactory();
-            _client = factory.CreateClient();
+            var factory = new CustomWebApplicationFactory<Startup>();
+            _client = factory.CreateClient(new WebApplicationFactoryClientOptions
+            {
+                BaseAddress = new Uri("https://localhost:5255")
+            });
         }
 
         [TearDown]
@@ -38,37 +42,29 @@ namespace WebPatient.IntegrationTest
             };
             var content = new StringContent(JsonConvert.SerializeObject(newPatient), Encoding.UTF8, "application/json");
 
-            // Act
             var response = await _client.PostAsync(url, content);
 
-            // Assert
             response.EnsureSuccessStatusCode();
 
-            // Captura o paciente criado do response
             var responseString = await response.Content.ReadAsStringAsync();
             var createdPatient = JsonConvert.DeserializeObject<Patient>(responseString);
 
-            // Verifica se o Id foi gerado pelo banco de dados
             Assert.AreNotEqual(Guid.Empty, createdPatient.Id);
         }
 
         [Test]
         public async Task GetAllPatients_ReturnsSuccessStatusCode()
         {
-            // Arrange
             var url = $"{BaseUrl}/GetAll";
 
-            // Act
             var response = await _client.GetAsync(url);
 
-            // Assert
             response.EnsureSuccessStatusCode();
         }
 
         [Test]
         public async Task UpdatePatient_ReturnsSuccessStatusCode()
         {
-            // Arrange
             var addUrl = $"{BaseUrl}/Create";
             var newPatient = new Patient
             {
@@ -84,11 +80,9 @@ namespace WebPatient.IntegrationTest
             var addResponse = await _client.PostAsync(addUrl, addContent);
             addResponse.EnsureSuccessStatusCode();
 
-            // Captura o paciente criado do response
             var responseString = await addResponse.Content.ReadAsStringAsync();
             var createdPatient = JsonConvert.DeserializeObject<Patient>(responseString);
 
-            // Atualiza o paciente
             var updateUrl = $"{BaseUrl}/Update/{createdPatient.Id}";
             var updatedPatient = new Patient
             {
@@ -103,17 +97,14 @@ namespace WebPatient.IntegrationTest
             };
             var updateContent = new StringContent(JsonConvert.SerializeObject(updatedPatient), Encoding.UTF8, "application/json");
 
-            // Act
             var updateResponse = await _client.PutAsync(updateUrl, updateContent);
 
-            // Assert
             updateResponse.EnsureSuccessStatusCode();
         }
 
         [Test]
         public async Task DeletePatient_ReturnsSuccessStatusCode()
         {
-            // Arrange
             var addUrl = $"{BaseUrl}/Create";
             var newPatient = new Patient
             {
@@ -129,17 +120,13 @@ namespace WebPatient.IntegrationTest
             var addResponse = await _client.PostAsync(addUrl, addContent);
             addResponse.EnsureSuccessStatusCode();
 
-            // Captura o paciente criado do response
             var responseString = await addResponse.Content.ReadAsStringAsync();
             var createdPatient = JsonConvert.DeserializeObject<Patient>(responseString);
 
-            // Exclui o paciente
             var deleteUrl = $"{BaseUrl}/Delete/{createdPatient.Id}";
 
-            // Act
             var deleteResponse = await _client.DeleteAsync(deleteUrl);
 
-            // Assert
             deleteResponse.EnsureSuccessStatusCode();
         }
 
