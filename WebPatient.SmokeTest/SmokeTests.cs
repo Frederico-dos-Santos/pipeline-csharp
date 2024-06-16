@@ -1,6 +1,5 @@
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
-using Microsoft.AspNetCore.TestHost;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Net;
 using WebPatient;
@@ -14,7 +13,8 @@ public class SmokeTests : IClassFixture<WebApplicationFactory<Startup>>
     {
         _factory = factory.WithWebHostBuilder(builder =>
         {
-            builder.UseSolutionRelativeContentRoot("WebPatient"); 
+            var contentRoot = Path.Combine(Directory.GetCurrentDirectory(), "..", "..", "..", "..", "WebPatient");
+            builder.UseContentRoot(contentRoot);
         });
     }
 
