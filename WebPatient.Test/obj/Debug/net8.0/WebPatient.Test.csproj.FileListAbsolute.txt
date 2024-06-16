@@ -340,3 +340,4 @@ C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\obj\Deb
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\obj\Debug\net8.0\WebPatient.Test.pdb
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\obj\Debug\net8.0\WebPatient.Test.genruntimeconfig.cache
 C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\obj\Debug\net8.0\ref\WebPatient.Test.dll
+C:\Users\frede\Documents\pipeline-csharp\pipeline-csharp\WebPatient.Test\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.InMemory.dll

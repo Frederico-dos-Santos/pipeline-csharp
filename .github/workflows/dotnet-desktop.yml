@@ -80,14 +80,5 @@ jobs:
         with:
           msbuild-version: '17.9.x'
 
-      - name: Setup NuGet
-        uses: NuGet/setup-nuget@v1.0.5
-
-      - name: Restore NuGet packages
-        run: nuget restore WebPatient/WebPatient.sln
-
-      - name: Build the Solution
-        run: dotnet build WebPatient/WebPatient.sln /p:Configuration=Release
-
       - name: Run Smoke Tests
         run: dotnet test WebPatient.SmokeTest/WebPatient.SmokeTest.csproj --no-build --verbosity normal
